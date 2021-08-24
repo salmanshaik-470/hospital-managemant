@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <style>
+body {
+  background-image: url("{% static 'images/conform.jpg' %}");
+  background-repeat: no-repeat;
+   background-size:cover
+}
+</style>
+
+
+</head>
+<body>
+<form ACTION="{% url 'mailed' %}" method="post">
+    {% csrf_token %}
+    <center>
+    <table>
+        {{fm.as_table}}
+    </table>
+    <input type="submit" value="confirmm">
+        </center>
+</form>
+
+</body>
+</html>

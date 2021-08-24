@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+<style>
+body {
+  background-image: url("{% static 'images/signup.jpg' %}");
+  background-repeat: no-repeat;
+   background-size:cover
+}
+</style>
+
+</head>
+<body>
+<form action="/signup" method="POST">
+    {% csrf_token %}
+
+    <center>
+         <h1>SIGNUP </h1>
+<table style="background-color:white ;  border-radius:10px ;padding:30px">
+    <div >
+    {{form}}
+        </div>
+</table>
+        <input type="submit" value="submit">
+ </center>
+</form>
+
+</body>
+</html>
